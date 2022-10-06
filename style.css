@@ -19,7 +19,7 @@
   --card-border-radius: 2rem;
   --card-border-radius-1: 0.42rem;
   --card-border-radius-2: 08rem;
-  --card-border-radius: 1.2rem;
+  --card-border-radius-3: 1.2rem;
 
   --card-padding: 1.8rem;
   --card-padding-1: 1.2rem;
@@ -190,7 +190,7 @@ aside .sidebar h3 {
   width: 100%;
 }
 .sidebar a.active {
-  background-color: var(--color-light);
+  background-color: var(--color-info-light);
   color: var(--color-primary);
   margin-left: 0;
 }
@@ -231,7 +231,7 @@ main {
 
 main .date {
   display: inline-block;
-  background: var(--color-light);
+  border-radius: var(--card-border-radius-1);
   margin-top: 1rem;
   padding: 0.5rem 1.6rem;
 }
@@ -438,4 +438,47 @@ main .recent-order a {
   display: flex;
   grid-template-columns: 20.6rem auto;
   margin-bottom: 1rem;
+}
+
+/* Sales Analytics */
+
+.right .sales-anlytics {
+  margin-top: 2rem;
+}
+
+.right .sales-anlytics h2 {
+  margin-bottom: 0.8rem;
+}
+
+.right .sales-anlytics .item {
+  background: var(--color-white);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.7rem;
+  padding: 1.4rem var(--card-padding);
+  border-radius: var(--card-border-radius-3);
+  box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
+}
+
+.right .sales-anlytics .item:hover {
+  box-shadow: none;
+}
+
+.right .sales-anlytics .item .right {
+  display: flex;
+  justify-content: space-between;
+
+  align-items: start;
+  margin: 0;
+  width: 100%;
+}
+
+.right .sales-anlytics .item .icon {
+  padding: 0.6rem;
+  color: var(--color-white);
+  border-radius: 50%;
+  background: var(--color-primary);
+  display: flex;
 }
