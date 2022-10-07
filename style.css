@@ -35,6 +35,7 @@
   --color-dark: #edeffd;
   --color-light: rgba(0, 0, 0, 0.4);
   --color-dark-variant: #a3bdcc;
+  --color-info-dark: #a3bdcc;
   --box-shadow: #0 2rem 3rem var(--color-light);
 }
 
@@ -140,7 +141,7 @@ b {
 
 aside {
   height: 100vh;
-  background: white;
+  background: var(--color-white);
   padding-left: 1rem;
 }
 
