@@ -12,6 +12,7 @@
   --color-info-dark: #01012c;
   --color-info-light: #536390;
   --color-dark: #161c24;
+  --color-light: #ecf3ff;
   --color-primary-variant: #6659e1;
   --color-dark-variant: #536390;
   --color-background: #f9fafb;
@@ -187,11 +188,11 @@ aside .sidebar h3 {
 .sidebar a:last-child {
   position: absolute;
   bottom: 2rem;
-  width: 100%;
 }
 .sidebar a.active {
   background-color: var(--color-info-light);
   color: var(--color-primary);
+  background-color: red;
   margin-left: 0;
 }
 
@@ -212,7 +213,7 @@ aside .sidebar h3 {
 }
 
 .sidebar a:hover span {
-  margin-left: 1rem;
+  margin-left: 0.5rem;
 }
 
 aside .sidebar .message-count {
@@ -371,13 +372,14 @@ main .recent-order a {
 /* Right */
 
 .right {
-  margin-top: 1.4rem;
+  margin-top: 1.1rem;
 }
 
 .right .top {
   display: flex;
   justify-content: end;
-  gap: 2rem;
+  gap: 3rem;
+  margin-top: 0rem;
 }
 
 .right .top button {
@@ -426,12 +428,17 @@ main .recent-order a {
 
 /* recent Updated */
 
+.right .recent-updates {
+  margin-top: 1.4rem;
+}
+
 .right .recent-updates .updates {
   background: var(--color-white);
   padding: var(--card-padding);
   border-radius: var(--card-border-radius);
   box-shadow: var(--box-shadow);
   transition: all 300ms ease;
+  margin-top: 1rem;
 }
 
 .right .recent-updates .updates .update {
@@ -481,4 +488,184 @@ main .recent-order a {
   border-radius: 50%;
   background: var(--color-primary);
   display: flex;
+}
+
+.right .sales-anlytics .add-product {
+  background-color: transparent;
+  border: 2px dashed var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right .sales-anlytics .add-product div {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.right .sales-anlytics .add-product div h3 {
+  font-weight: 600;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 98%;
+    grid-template-columns: 7rem auto 23rem;
+  }
+
+  aside .logo {
+    display: none;
+  }
+
+  aside .sidebar h3 {
+    display: none;
+  }
+
+  aside .sidebar a {
+    width: 5.6rem;
+  }
+
+  aside .sidebar a:last-child {
+    position: relative;
+    margin-top: 2rem;
+  }
+
+  aside .sidebar .message-count {
+    padding: 2px 6px;
+  }
+  main .insights {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  main .recent-order {
+    width: 98%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 2rem 0 0 8.8rem;
+  }
+
+  main .recent-order table {
+    width: 82vw;
+  }
+
+  main table thead tr th:last-child,
+  main table thead tr th:first-child {
+    display: none;
+  }
+
+  main table tbody tr th:last-child,
+  main table tbody tr th:first-child {
+    display: none;
+  }
+}
+
+/* Media queries */
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+  aside {
+    position: fixed;
+    left: 0;
+    background: var(--color-white);
+    width: 18rem;
+    z-index: 3;
+    box-shadow: 1rem 3rem 4rem var(--color-light);
+    height: 100vh;
+    padding-right: var (--card-padding);
+    display: none;
+  }
+
+  aside .logo {
+    margin-left: 1rem;
+  }
+
+  aside .logo h2 {
+    display: none;
+  }
+
+  aside .sidebar h3 {
+    display: inline;
+  }
+
+  aside .sidebar a {
+    width: 100%;
+    height: 3.4rem;
+  }
+
+  aside .sidebar a:last-child {
+    position: absolute;
+    bottom: 5rem;
+  }
+
+  aside .close {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  main {
+    margin-top: 8rem;
+    padding: 0 1rem;
+  }
+
+  main .recent-order {
+    position: relative;
+    margin: 3rem 0 0 0;
+    width: 100%;
+  }
+
+  main .recent-order table {
+    width: 100%;
+    margin: 0;
+  }
+
+  .right {
+    width: 98rem;
+    margin: 0 auto 4rem;
+  }
+
+  .right .top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    padding: 0 0.8rem;
+    height: 4.6rem;
+    width: 100%;
+    background: var(--color-white);
+    margin: 0;
+    z-index: 2;
+    box-shadow: 0 1rem 1rem var(--color-light);
+  }
+
+  .right .top .theme-toggler {
+    width: 4.4rem;
+    position: absolute;
+    left: 66%;
+  }
+
+  .right .profile .info {
+    display: none;
+  }
+
+  .right .top button {
+    display: inline-block;
+    background: transparent;
+    cursor: pointer;
+
+    color: var(--color-dark);
+    position: absolute;
+    left: 1rem;
+  }
+
+  .right .top button span {
+    font-size: 2rem;
+  }
 }
