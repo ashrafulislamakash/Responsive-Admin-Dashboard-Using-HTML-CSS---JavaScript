@@ -644,7 +644,7 @@ main .recent-order a {
   }
 
   .right {
-    width: 98%;
+    /* width: 98%; */
     /* width: 98rem; */
     margin: 0 auto 4rem;
   }
