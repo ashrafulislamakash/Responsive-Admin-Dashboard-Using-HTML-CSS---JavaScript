@@ -203,7 +203,6 @@ aside .sidebar h3 {
 .sidebar a.active {
   background-color: var(--color-info-light);
   color: var(--color-primary);
-  background-color: red;
   margin-left: 0;
 }
 
@@ -606,7 +605,7 @@ main .recent-order a {
   }
 
   aside .logo h2 {
-    display: ;
+    display: inline-block;
   }
 
   aside .sidebar h3 {
@@ -645,7 +644,8 @@ main .recent-order a {
   }
 
   .right {
-    width: 98rem;
+    width: 98%;
+    /* width: 98rem; */
     margin: 0 auto 4rem;
   }
 
