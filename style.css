@@ -142,34 +142,35 @@ b {
 aside {
   height: 100vh;
   background: var(--color-white);
-  padding-left: 1rem;
+  /* padding-left: 1rem; */
 }
 
-.top {
+aside .top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 1.4rem;
 }
 
-.logo {
+aside .logo {
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  margin-left: 1rem;
 }
 
-.logo img {
+aside .logo img {
   width: 2rem;
   height: 2rem;
 }
 
-.close {
+aside .close {
   display: none;
 }
 
 /* siebar */
 
-.sidebar {
+aside .sidebar {
   display: flex;
   flex-direction: column;
   height: 92vh;
@@ -181,9 +182,10 @@ aside .sidebar h3 {
   font-weight: 500;
 }
 
-.sidebar a {
+aside .sidebar a {
   display: flex;
   color: var(--color-info-dark);
+  margin-left: 2rem;
   gap: 1rem;
   align-items: center;
   position: relative;
@@ -191,38 +193,38 @@ aside .sidebar h3 {
   transition: all 300ms ease;
 }
 
-.sidebar a span {
+aside .sidebar a span {
   font-size: 1.6rem;
   transition: all 300ms ease;
 }
 
-.sidebar a:last-child {
+aside .sidebar a:last-child {
   position: absolute;
   bottom: 2rem;
 }
-.sidebar a.active {
-  background-color: var(--color-info-light);
+aside .sidebar a.active {
+  background-color: var(--color-light);
   color: var(--color-primary);
   margin-left: 0;
 }
 
-.sidebar a.active::before {
+aside .sidebar a.active::before {
   content: "";
   width: 6px;
   height: 100%;
   background: var(--color-primary);
 }
 
-.sidebar a.active span {
+aside .sidebar a.active span {
   color: var(--color-primary);
   margin-left: calc(1rem - 3px);
 }
 
-.sidebar a:hover {
+aside .sidebar a:hover {
   color: var(--color-primary);
 }
 
-.sidebar a:hover span {
+aside .sidebar a:hover span {
   margin-left: 0.5rem;
 }
 
@@ -242,12 +244,13 @@ main {
 
 main .date {
   display: inline-block;
+  background: var(--color-light);
   border-radius: var(--card-border-radius-1);
   margin-top: 1rem;
   padding: 0.5rem 1.6rem;
 }
 
-main .date input [type="date"] {
+main .date input[type="date"] {
   background: transparent;
   color: var(--color-dark);
 }
@@ -368,13 +371,13 @@ main table tbody td {
   color: var(--color-dark-variant);
 }
 
-main table tbody td:last-child {
+main table tbody tr:last-child td {
   border: none;
 }
 
 main .recent-order a {
+  display: block;
   text-align: center;
-
   margin: 1rem auto;
   color: var(--color-primary);
 }
@@ -382,14 +385,13 @@ main .recent-order a {
 /* Right */
 
 .right {
-  margin-top: 1.1rem;
+  margin-top: 1.4rem;
 }
 
 .right .top {
   display: flex;
   justify-content: end;
-  gap: 3rem;
-  margin-top: 0rem;
+  gap: 2rem;
 }
 
 .right .top button {
@@ -419,7 +421,6 @@ main .recent-order a {
 .right .theme-toggler span.active {
   background: var(--color-primary);
   color: var(--color-white);
-
   border-radius: var(--card-border-radius-1);
 }
 
@@ -439,7 +440,7 @@ main .recent-order a {
 /* recent Updated */
 
 .right .recent-updates {
-  margin-top: 1.4rem;
+  margin-top: 1rem;
 }
 
 .right .recent-updates .updates {
@@ -452,11 +453,15 @@ main .recent-order a {
 }
 
 .right .recent-updates .updates .update {
-  display: flex;
-  grid-template-columns: 20.6rem auto;
+  display: grid;
+  grid-template-columns: 2.6rem auto;
+  gap: 1rem;
   margin-bottom: 1rem;
 }
 
+.right .recent-updates .updates:hover {
+  box-shadow: none;
+}
 /* Sales Analytics */
 
 .right .sales-anlytics {
@@ -486,7 +491,6 @@ main .recent-order a {
 .right .sales-anlytics .item .right {
   display: flex;
   justify-content: space-between;
-
   align-items: start;
   margin: 0;
   width: 100%;
@@ -498,6 +502,14 @@ main .recent-order a {
   border-radius: 50%;
   background: var(--color-primary);
   display: flex;
+}
+
+.right .sales-anlytics .item.offline .icon {
+  background: var(--color-danger);
+}
+
+.right .sales-anlytics .item.customers .icon {
+  background: var(--color-Success);
 }
 
 .right .sales-anlytics .add-product {
@@ -518,15 +530,18 @@ main .recent-order a {
   font-weight: 600;
 }
 
-/* Media Queries */
+.right .sales-anlytics .add-product:hover {
+  background: var(--color-light);
+}
+/* Media Queries  Laptop */
 
 @media screen and (max-width: 1200px) {
   .container {
-    width: 98%;
+    width: 94%;
     grid-template-columns: 7rem auto 23rem;
   }
 
-  aside .logo {
+  aside .logo h2 {
     display: none;
   }
 
@@ -540,7 +555,7 @@ main .recent-order a {
 
   aside .sidebar a:last-child {
     position: relative;
-    margin-top: 2rem;
+    margin-top: 1.8rem;
   }
 
   aside .sidebar .message-count {
@@ -552,7 +567,7 @@ main .recent-order a {
   }
 
   main .recent-order {
-    width: 98%;
+    width: 94%;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -560,7 +575,7 @@ main .recent-order a {
   }
 
   main .recent-order table {
-    width: 82vw;
+    width: 83vw;
   }
 
   main table thead tr th:last-child,
@@ -568,13 +583,13 @@ main .recent-order a {
     display: none;
   }
 
-  main table tbody tr th:last-child,
-  main table tbody tr th:first-child {
+  main table tbody tr td:last-child,
+  main table tbody tr td:first-child {
     display: none;
   }
 }
 
-/* Media queries */
+/* Media queries Table and Mobile  */
 
 @media screen and (max-width: 768px) {
   .container {
@@ -605,7 +620,7 @@ main .recent-order a {
   }
 
   aside .logo h2 {
-    display: inline-block;
+    display: inline;
   }
 
   aside .sidebar h3 {
@@ -628,7 +643,7 @@ main .recent-order a {
   }
 
   main {
-    margin-top: 8rem;
+    margin-top: 6rem;
     padding: 0 1rem;
   }
 
@@ -644,8 +659,7 @@ main .recent-order a {
   }
 
   .right {
-    /* width: 98%; */
-    /* width: 98rem; */
+    width: 94%;
     margin: 0 auto 4rem;
   }
 
@@ -660,7 +674,7 @@ main .recent-order a {
     background: var(--color-white);
     margin: 0;
     z-index: 2;
-    box-shadow: 0 1rem 1rem var(--color-light);
+    box-shadow: 0 0.5rem 0.5rem var(--color-light);
   }
 
   .right .top .theme-toggler {
@@ -677,7 +691,6 @@ main .recent-order a {
     display: inline-block;
     background: transparent;
     cursor: pointer;
-
     color: var(--color-dark);
     position: absolute;
     left: 1rem;
