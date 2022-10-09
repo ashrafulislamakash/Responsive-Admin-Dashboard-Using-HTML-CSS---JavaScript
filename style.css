@@ -61,7 +61,7 @@ body {
   font-size: 0.88rem;
   background: var(--color-background);
   user-select: none;
-  /* overflow: hidden; */
+  overflow: hidden;
   color: var(--color-dark);
 }
 
@@ -142,7 +142,6 @@ b {
 aside {
   height: 100vh;
   background: var(--color-white);
-  /* padding-left: 1rem; */
 }
 
 aside .top {
@@ -268,27 +267,28 @@ main .insights > div {
   border-radius: var(--card-border-radius);
   margin-top: 1rem;
   box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
 }
 
-main .insights :hover {
+main .insights > div:hover {
   box-shadow: none;
   cursor: pointer;
 }
 
 main .insights > div span {
-  background: var(--color-danger);
+  background: var(--color-primary);
   padding: 0.5rem;
   border-radius: 50%;
-  color: var(--color-background);
+  color: var(--color-white);
   font-size: 2rem;
 }
 
-main .insights > div .expenses span {
-  background: var(--color-primary);
+main .insights > div.expenses span {
+  background: var(--color-danger);
 }
 
 main .insights > div.income span {
-  background: var(--color-primary-variant);
+  background: var(--color-Success);
 }
 
 main .insights > div .middle {
@@ -299,7 +299,6 @@ main .insights > div .middle {
 
 main .sidebar h3 {
   margin: 1rem 0 0.6rem;
-
   font-size: 1rem;
 }
 
@@ -317,7 +316,7 @@ main .insights svg {
 
 main .insights svg circle {
   fill: none;
-  stroke: var(--color-dark-variant);
+  stroke: var(--color-primary);
   stroke-width: 14;
   stroke-linecap: round;
   transform: translate(5px, 5px);
@@ -325,9 +324,21 @@ main .insights svg circle {
   stroke-dashoffset: 92;
 }
 
-main .insights .expenses svg circle {
+main .insights .sales svg circle {
   stroke-dasharray: -30;
   stroke-dashoffset: 200;
+}
+
+main .insights .expenses svg circle {
+  stroke: var(--color-danger);
+  stroke-dasharray: 200;
+  stroke-dashoffset: 50;
+}
+
+main .insights .income svg circle {
+  stroke: var(--color-Success);
+  stroke-dasharray: 200;
+  stroke-dashoffset: 00;
 }
 
 main .insights .progress .number {
@@ -356,7 +367,6 @@ main .recent-order table {
   width: 100%;
   border-radius: var(--card-border-radius);
   padding: var(--card-padding);
-  text-align: center;
   box-shadow: var(--box-shadow);
   transition: all 300ms ease;
 }
@@ -369,6 +379,10 @@ main table tbody td {
   height: 2.8rem;
   border-bottom: 1px solid var(--color-light);
   color: var(--color-dark-variant);
+}
+
+main table thead tr {
+  text-align: left;
 }
 
 main table tbody tr:last-child td {
