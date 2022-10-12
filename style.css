@@ -440,7 +440,7 @@ main .recent-order a {
 
 .right .top .profile {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   text-align: right;
 }
 
@@ -680,6 +680,7 @@ main .recent-order a {
 
   .right .top {
     position: fixed;
+
     top: 0;
     left: 0;
     align-items: center;
